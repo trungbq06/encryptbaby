@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 
+- (IBAction)btnCopyClick:(id)sender;
+- (IBAction)btnEncodeClick:(id)sender;
+- (IBAction)btnPasteClick:(id)sender;
 
 @end
 
