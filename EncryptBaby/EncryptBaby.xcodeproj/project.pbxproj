@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372BE9E61A38152E00E9B3CC /* yellow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E51A38152E00E9B3CC /* yellow.jpg */; };
+		372BE9E91A381F3300E9B3CC /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E71A381F3300E9B3CC /* button.png */; };
+		372BE9EA1A381F3300E9B3CC /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E81A381F3300E9B3CC /* button@2x.png */; };
+		37ADBFD11A39C6AA005137F2 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37ADBFD01A39C6AA005137F2 /* bg.jpg */; };
+		37ADBFD31A39C6BF005137F2 /* bg_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37ADBFD21A39C6BF005137F2 /* bg_2.jpg */; };
+		37ADBFD61A39C7F7005137F2 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = 37ADBFD41A39C7F7005137F2 /* box.png */; };
+		37ADBFD71A39C7F7005137F2 /* box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37ADBFD51A39C7F7005137F2 /* box@2x.png */; };
 		677835931A37D33B00CA246E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 677835921A37D33B00CA246E /* main.m */; };
 		677835961A37D33B00CA246E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 677835951A37D33B00CA246E /* AppDelegate.m */; };
 		6778359C1A37D33B00CA246E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6778359A1A37D33B00CA246E /* Main.storyboard */; };
@@ -27,6 +34,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372BE9E51A38152E00E9B3CC /* yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellow.jpg; sourceTree = "<group>"; };
+		372BE9E71A381F3300E9B3CC /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		372BE9E81A381F3300E9B3CC /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		37ADBFD01A39C6AA005137F2 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		37ADBFD21A39C6BF005137F2 /* bg_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2.jpg; sourceTree = "<group>"; };
+		37ADBFD41A39C7F7005137F2 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
+		37ADBFD51A39C7F7005137F2 /* box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box@2x.png"; sourceTree = "<group>"; };
 		6778358D1A37D33B00CA246E /* EncryptBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncryptBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		677835911A37D33B00CA246E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		677835921A37D33B00CA246E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +109,13 @@
 		677835901A37D33B00CA246E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				37ADBFD41A39C7F7005137F2 /* box.png */,
+				37ADBFD51A39C7F7005137F2 /* box@2x.png */,
+				37ADBFD21A39C6BF005137F2 /* bg_2.jpg */,
+				37ADBFD01A39C6AA005137F2 /* bg.jpg */,
+				372BE9E71A381F3300E9B3CC /* button.png */,
+				372BE9E81A381F3300E9B3CC /* button@2x.png */,
+				372BE9E51A38152E00E9B3CC /* yellow.jpg */,
 				677835911A37D33B00CA246E /* Info.plist */,
 				677835921A37D33B00CA246E /* main.m */,
 			);
@@ -216,7 +237,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6778359C1A37D33B00CA246E /* Main.storyboard in Resources */,
+				37ADBFD31A39C6BF005137F2 /* bg_2.jpg in Resources */,
+				372BE9E91A381F3300E9B3CC /* button.png in Resources */,
+				37ADBFD61A39C7F7005137F2 /* box.png in Resources */,
+				37ADBFD71A39C7F7005137F2 /* box@2x.png in Resources */,
+				372BE9E61A38152E00E9B3CC /* yellow.jpg in Resources */,
 				677835A11A37D33B00CA246E /* LaunchScreen.xib in Resources */,
+				37ADBFD11A39C6AA005137F2 /* bg.jpg in Resources */,
+				372BE9EA1A381F3300E9B3CC /* button@2x.png in Resources */,
 				6778359E1A37D33B00CA246E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +458,7 @@
 				677835B21A37D33B00CA246E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		677835B31A37D33B00CA246E /* Build configuration list for PBXNativeTarget "EncryptBabyTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +467,7 @@
 				677835B51A37D33B00CA246E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

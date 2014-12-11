@@ -12,7 +12,11 @@
 
 - (IBAction)btnCopyClick:(id)sender;
 - (IBAction)btnEncodeClick:(id)sender;
-- (IBAction)btnPasteClick:(id)sender;
+- (IBAction)btnClearClick:(id)sender;
+- (IBAction)easyClick:(id)sender;
+- (IBAction)mediumClick:(id)sender;
+- (IBAction)hardClick:(id)sender;
+- (IBAction)buyClick:(id)sender;
 
 @end
 
