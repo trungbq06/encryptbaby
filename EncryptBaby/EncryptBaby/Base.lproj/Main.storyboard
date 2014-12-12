@@ -36,8 +36,6 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="No2-RJ-ebb">
                                 <rect key="frame" x="22" y="62" width="553" height="123"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="123" id="QwE-97-Eyf"/>
                                 </constraints>
@@ -45,7 +43,7 @@
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-Eg-fHI">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-Eg-fHI">
                                 <rect key="frame" x="24" y="238" width="553" height="123"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
