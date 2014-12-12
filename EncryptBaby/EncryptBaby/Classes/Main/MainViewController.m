@@ -7,8 +7,13 @@
 //
 
 #import "MainViewController.h"
+#import "DLIDEKeyboardView.h"
 
-@interface MainViewController ()
+@interface MainViewController () {
+    NSArray *_products;
+}
+
+@property (nonatomic, assign) BOOL              isPurchased;
 @property (weak, nonatomic) IBOutlet UITextView *txtText;
 @property (weak, nonatomic) IBOutlet UITextView *encodeText;
 @property (nonatomic, assign) int level;
@@ -16,14 +21,67 @@
 
 @end
 
+#define kRemoveAdsProductIdentifier @"com.dragon.GuessSongApp"
+#define kPurchased @"purchased"
+
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CGRect appframe = [[UIScreen mainScreen] bounds];
+    [DLIDEKeyboardView attachToTextView:_txtText];
+    [DLIDEKeyboardView attachToTextView:_encodeText];
+    
+    _isPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:kPurchased];
+    
+    if (!_isPurchased) {
+        _adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, appframe.size.height - 50, appframe.size.width, 50)];
+        _adView.delegate = self;
+        _adView.alpha = 0;
+    }
+    
+    [self.view addSubview:_adView];
+    
     _startC = 1;
     _level = 3;
-    // Do any additional setup after loading the view, typically from a nib.
+}
+
+#pragma mark - AdBannerViewDelegate method implementation
+
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner will load ad.");
+}
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner did load ad.");
+    
+    // Show the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        _adView.alpha = 1.0;
+    }];
+}
+
+
+-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    NSLog(@"Ad Banner action is about to begin.");
+    
+    return YES;
+}
+
+
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{
+    NSLog(@"Ad Banner action did finish");
+    
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+    
+    // Hide the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        _adView.alpha = 0.0;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,9 +117,7 @@
         
         NSString *newWord = @"";
         
-        if (ranS > _startC) {
-            _startC = ranS;
-        }
+        _startC = ranS;
         if (_level == 1) {
             _startC = 1;
         }
@@ -99,8 +155,84 @@
     return word;
 }
 
-- (IBAction)btnCopyClick:(id)sender {
+#pragma mark - Message Delegate
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
     
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult) result
+{
+    switch (result) {
+        case MessageComposeResultCancelled:
+            break;
+            
+        case MessageComposeResultFailed:
+        {
+            UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to send SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [warningAlert show];
+            break;
+        }
+            
+        case MessageComposeResultSent:
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)btnEmailClick:(id)sender {
+    MFMailComposeViewController *mViewController = [[MFMailComposeViewController alloc] init];
+    mViewController.mailComposeDelegate = self;
+    [mViewController setSubject:@"Encrypt Mesage"];
+    [mViewController setMessageBody:@"Where you can encrypt and share your message" isHTML:NO];
+    
+    [self presentViewController:mViewController animated:TRUE completion:nil];
+}
+
+- (IBAction)btnSMSClick:(id)sender {
+    if(![MFMessageComposeViewController canSendText]) {
+        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [warningAlert show];
+        return;
+    }
+    
+    MFMessageComposeViewController *mViewController = [[MFMessageComposeViewController alloc] init];
+    mViewController.messageComposeDelegate = self;
+    [mViewController setBody:@"Download Encrypt today"];
+    
+    [self presentViewController:mViewController animated:TRUE completion:nil];
+}
+
+- (IBAction)btnCopyClick:(id)sender {
+    NSString *copyStringverse = _encodeText.text;
+    UIPasteboard *pb = [UIPasteboard generalPasteboard];
+    [pb setString:copyStringverse];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Copy" message:@"Message copied to clipboard" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (IBAction)btnEncodeClick:(id)sender {
@@ -109,8 +241,9 @@
     [self encode:text];
 }
 
-- (IBAction)btnPasteClick:(id)sender {
+- (IBAction)btnClearClick:(id)sender {
     _txtText.text = @"";
+    _encodeText.text = @"";
 }
 
 - (IBAction)easyClick:(id)sender {
@@ -126,6 +259,85 @@
 }
 
 - (IBAction)buyClick:(id)sender {
+    [SVProgressHUD showWithStatus:@"Processing ..." maskType:SVProgressHUDMaskTypeBlack];
+    
+    NSArray *identifiers = [NSArray arrayWithObjects:@"", nil];
+    [self validateProductIdentifiers:identifiers];
+}
+
+#pragma mark - RETRIEVE PRODUCT INFORMATION
+// Custom method
+- (void)validateProductIdentifiers:(NSArray *)productIdentifiers
+{
+    SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithArray:productIdentifiers]];
+    productsRequest.delegate = self;
+    [productsRequest start];
+}
+
+// SKProductsRequestDelegate protocol method
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
+{
+    for(SKProduct *aProduct in response.products){
+        NSLog(@"%@", aProduct.productIdentifier);
+    }
+    _products = response.products;
+    
+    if ([_products count] > 0) {
+        SKProduct * product = (SKProduct *) _products[0];
+        
+        SKPayment *payment = [SKPayment paymentWithProduct:product];
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+        [[SKPaymentQueue defaultQueue] addPayment:payment];
+    }
+    
+    [SVProgressHUD dismiss];
+}
+
+- (void) paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    NSLog(@"received restored transactions: %i", queue.transactions.count);
+    for (SKPaymentTransaction *transaction in queue.transactions)
+    {
+        if(SKPaymentTransactionStateRestored){
+            NSLog(@"Transaction state -> Restored");
+            //called when the user successfully restores a purchase
+            
+            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+            break;
+        }
+    }
+}
+
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{
+    [SVProgressHUD dismiss];
+    for(SKPaymentTransaction *transaction in transactions){
+        //        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+        
+        if (transaction.transactionState == SKPaymentTransactionStatePurchasing){
+            NSLog(@"Transaction state -> Purchasing");
+            //called when the user is in the process of purchasing, do not add any of your own code here.
+            [SVProgressHUD showWithStatus:@"Processing ..." maskType:SVProgressHUDMaskTypeBlack];
+        }else if (transaction.transactionState == SKPaymentTransactionStatePurchased) {
+            //this is called when the user has successfully purchased the package (Cha-Ching!)
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kPurchased];
+            [_adView removeFromSuperview];
+            
+            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+            [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+            NSLog(@"Transaction state -> Purchased");
+        } else if (transaction.transactionState == SKPaymentTransactionStateRestored) {
+            NSLog(@"Transaction state -> Restored");
+            //add the same code as you did from SKPaymentTransactionStatePurchased here
+            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+        } else if (transaction.transactionState == SKPaymentTransactionStateFailed) {
+            //called when the transaction does not finnish
+            if(transaction.error.code != SKErrorPaymentCancelled){
+                NSLog(@"Transaction state -> Cancelled");
+                //the user cancelled the payment ;(
+            }
+            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+        }
+    }
 }
 
 @end
