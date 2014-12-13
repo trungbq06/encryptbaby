@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -18,33 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="fwo-iZ-3tr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="fwo-iZ-3tr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GF4-tu-uka">
-                                <rect key="frame" x="8" y="57" width="584" height="123"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GF4-tu-uka">
+                                <rect key="frame" x="8" y="57" width="584" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="box.png" translatesAutoresizingMaskIntoConstraints="NO" id="GvP-Va-VSO">
-                                        <rect key="frame" x="0.0" y="0.0" width="584" height="123"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box.png" translatesAutoresizingMaskIntoConstraints="NO" id="GvP-Va-VSO">
+                                        <rect key="frame" x="0.0" y="0.0" width="584" height="190"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="No2-RJ-ebb">
-                                        <rect key="frame" x="15" y="0.0" width="553" height="123"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="No2-RJ-ebb">
+                                        <rect key="frame" x="20" y="8" width="546" height="185"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.79607843140000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="X6h-O4-C9X"/>
+                                        </connections>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GvP-Va-VSO" firstAttribute="top" secondItem="GF4-tu-uka" secondAttribute="top" id="3yQ-yK-buo"/>
+                                    <constraint firstAttribute="bottom" secondItem="GvP-Va-VSO" secondAttribute="bottom" constant="10" id="4Jc-zb-2fg"/>
+                                    <constraint firstAttribute="trailing" secondItem="No2-RJ-ebb" secondAttribute="trailing" constant="18" id="HNl-fp-GQt"/>
+                                    <constraint firstItem="GvP-Va-VSO" firstAttribute="leading" secondItem="GF4-tu-uka" secondAttribute="leading" id="Hqg-NS-51z"/>
+                                    <constraint firstAttribute="trailing" secondItem="GvP-Va-VSO" secondAttribute="trailing" id="OjP-dn-0B0"/>
+                                    <constraint firstAttribute="bottom" secondItem="No2-RJ-ebb" secondAttribute="bottom" constant="7" id="URe-vu-nL6"/>
+                                    <constraint firstItem="No2-RJ-ebb" firstAttribute="leading" secondItem="GF4-tu-uka" secondAttribute="leading" constant="20" id="Y0V-10-f7T"/>
+                                    <constraint firstItem="No2-RJ-ebb" firstAttribute="top" secondItem="GF4-tu-uka" secondAttribute="top" constant="8" id="cuE-58-c1M"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2x-b0-PCB">
-                                <rect key="frame" x="8" y="233" width="584" height="123"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2x-b0-PCB">
+                                <rect key="frame" x="8" y="299" width="584" height="190"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="box.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTb-wY-5Ap">
-                                        <rect key="frame" x="0.0" y="0.0" width="584" height="123"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTb-wY-5Ap">
+                                        <rect key="frame" x="0.0" y="0.0" width="584" height="190"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-Eg-fHI">
-                                        <rect key="frame" x="15" y="0.0" width="553" height="123"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-Eg-fHI">
+                                        <rect key="frame" x="20" y="8" width="546" height="180"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.79607843140000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,9 +66,23 @@
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qCR-Eg-fHI" secondAttribute="trailing" constant="18" id="Gjl-mF-PmH"/>
+                                    <constraint firstItem="qCR-Eg-fHI" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="top" constant="8" id="IeC-dM-CM5"/>
+                                    <constraint firstItem="QTb-wY-5Ap" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="top" id="abK-5Y-6Yo"/>
+                                    <constraint firstAttribute="bottom" secondItem="qCR-Eg-fHI" secondAttribute="bottom" constant="2" id="eaE-nE-WZl"/>
+                                    <constraint firstAttribute="trailing" secondItem="QTb-wY-5Ap" secondAttribute="trailing" id="ic6-4s-BXB"/>
+                                    <constraint firstItem="qCR-Eg-fHI" firstAttribute="leading" secondItem="R2x-b0-PCB" secondAttribute="leading" constant="20" id="ltg-qW-l4m"/>
+                                    <constraint firstItem="QTb-wY-5Ap" firstAttribute="leading" secondItem="R2x-b0-PCB" secondAttribute="leading" id="nZO-cJ-1iN"/>
+                                    <constraint firstAttribute="bottom" secondItem="QTb-wY-5Ap" secondAttribute="bottom" id="qux-pV-PmM"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSp-gN-cEb">
-                                <rect key="frame" x="249" y="190" width="103" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSp-gN-cEb">
+                                <rect key="frame" x="249" y="256" width="103" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="QTj-LE-zPK"/>
+                                    <constraint firstAttribute="height" constant="35" id="Sgc-Ni-m82"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                                 <state key="normal" title="SCRAMBLE" backgroundImage="button.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,8 +92,12 @@
                                     <action selector="btnEncodeClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c1R-p1-Vqp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsO-XS-Cc6">
-                                <rect key="frame" x="161" y="190" width="80" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsO-XS-Cc6">
+                                <rect key="frame" x="161" y="256" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4rn-4B-pqS"/>
+                                    <constraint firstAttribute="width" constant="80" id="deu-JO-h7w"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                                 <state key="normal" title="COPY" backgroundImage="button.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,8 +107,12 @@
                                     <action selector="btnCopyClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9tJ-SV-fEJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEv-8a-XhU">
-                                <rect key="frame" x="360" y="190" width="80" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEv-8a-XhU">
+                                <rect key="frame" x="360" y="256" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="GXL-RR-hSb"/>
+                                    <constraint firstAttribute="height" constant="35" id="HHf-vf-yy8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                                 <state key="normal" title="CLEAR" backgroundImage="button.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -87,6 +122,12 @@
                                     <action selector="btnClearClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nSE-Fg-bhV"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQT-3u-Pxu">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="ozo-go-mBn"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYb-Ud-fs4">
                                 <rect key="frame" x="445" y="25" width="68" height="29"/>
                                 <constraints>
@@ -129,8 +170,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9T-ir-Cpv">
-                                <rect key="frame" x="351" y="460" width="80" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9T-ir-Cpv">
+                                <rect key="frame" x="351" y="502" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8dm-l8-wHu"/>
+                                    <constraint firstAttribute="height" constant="35" id="qko-Wa-aOR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                                 <state key="normal" title="BUY" backgroundImage="button.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,8 +185,12 @@
                                     <action selector="buyClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IW0-eB-sXo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifG-Qi-DBP">
-                                <rect key="frame" x="259" y="460" width="80" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifG-Qi-DBP">
+                                <rect key="frame" x="260" y="502" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="AD1-pM-isw"/>
+                                    <constraint firstAttribute="height" constant="35" id="dNm-ji-AsL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                                 <state key="normal" title="SMS" backgroundImage="button.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,8 +200,12 @@
                                     <action selector="btnSMSClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7s6-Fx-VxC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmt-x7-5Z5">
-                                <rect key="frame" x="169" y="460" width="80" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmt-x7-5Z5">
+                                <rect key="frame" x="169" y="502" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="GTQ-GS-DPx"/>
+                                    <constraint firstAttribute="height" constant="35" id="u2o-ai-fMI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
                                 <state key="normal" title="EMAIL" backgroundImage="button.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,15 +218,39 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="GF4-tu-uka" secondAttribute="trailing" constant="8" id="3GQ-NZ-m7c"/>
-                            <constraint firstItem="GF4-tu-uka" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="7Et-pH-8H2"/>
-                            <constraint firstItem="GF4-tu-uka" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="57" id="Js8-vZ-eer"/>
+                            <constraint firstItem="a9T-ir-Cpv" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="bottom" constant="13" id="2Ky-aU-rHE"/>
+                            <constraint firstItem="mSp-gN-cEb" firstAttribute="leading" secondItem="YsO-XS-Cc6" secondAttribute="trailing" constant="8" id="6zw-KT-gAs"/>
+                            <constraint firstAttribute="bottom" secondItem="R2x-b0-PCB" secondAttribute="bottom" constant="111" id="7dT-pJ-Ov2"/>
+                            <constraint firstAttribute="trailing" secondItem="KQT-3u-Pxu" secondAttribute="trailing" id="9zP-gW-rBv"/>
+                            <constraint firstAttribute="bottom" secondItem="fwo-iZ-3tr" secondAttribute="bottom" id="ChY-0b-zwg"/>
+                            <constraint firstItem="fwo-iZ-3tr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GQ0-MY-WeL"/>
+                            <constraint firstItem="KQT-3u-Pxu" firstAttribute="bottom" secondItem="bEv-8a-XhU" secondAttribute="bottom" constant="9" id="JPH-es-Qoa"/>
+                            <constraint firstAttribute="centerY" secondItem="KQT-3u-Pxu" secondAttribute="centerY" id="Kyt-Es-KOd"/>
+                            <constraint firstAttribute="trailing" secondItem="GF4-tu-uka" secondAttribute="trailing" constant="8" id="Oin-na-fXt"/>
+                            <constraint firstAttribute="trailing" secondItem="R2x-b0-PCB" secondAttribute="trailing" constant="8" id="PrE-9B-ale"/>
+                            <constraint firstItem="fwo-iZ-3tr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Sjp-mQ-EYO"/>
+                            <constraint firstAttribute="centerX" secondItem="mSp-gN-cEb" secondAttribute="centerX" id="TLX-gc-sUN"/>
+                            <constraint firstItem="YsO-XS-Cc6" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="-9" id="UMy-C5-MWs"/>
+                            <constraint firstAttribute="centerX" secondItem="ifG-Qi-DBP" secondAttribute="centerX" id="UWZ-DS-FVm"/>
+                            <constraint firstItem="ifG-Qi-DBP" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="bottom" constant="13" id="Xrk-48-7cv"/>
                             <constraint firstItem="tvH-Ik-VFL" firstAttribute="leading" secondItem="xYb-Ud-fs4" secondAttribute="trailing" constant="3" id="Xx5-AD-MAC"/>
+                            <constraint firstItem="bEv-8a-XhU" firstAttribute="leading" secondItem="mSp-gN-cEb" secondAttribute="trailing" constant="8" id="Ya2-Mu-0US"/>
+                            <constraint firstItem="R2x-b0-PCB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="clH-zh-IzO"/>
+                            <constraint firstItem="GF4-tu-uka" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="-43" id="ibp-XR-UEx"/>
+                            <constraint firstItem="R2x-b0-PCB" firstAttribute="top" secondItem="KQT-3u-Pxu" secondAttribute="top" constant="-1" id="kMj-6L-83J"/>
+                            <constraint firstItem="a9T-ir-Cpv" firstAttribute="leading" secondItem="ifG-Qi-DBP" secondAttribute="trailing" constant="11" id="kf3-rY-X23"/>
                             <constraint firstItem="xYb-Ud-fs4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="kqN-tH-FBg"/>
                             <constraint firstItem="xYb-Ud-fs4" firstAttribute="leading" secondItem="oSL-zi-zTK" secondAttribute="trailing" constant="5" id="l3g-AB-FRM"/>
+                            <constraint firstItem="GF4-tu-uka" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="ldN-P8-8pN"/>
+                            <constraint firstItem="GF4-tu-uka" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="57" id="nUk-WO-tZw"/>
                             <constraint firstItem="tvH-Ik-VFL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pC3-Cn-4ay"/>
                             <constraint firstItem="tvH-Ik-VFL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="qY5-o4-Vaa"/>
+                            <constraint firstItem="Fmt-x7-5Z5" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="bottom" constant="13" id="rrp-N1-42H"/>
+                            <constraint firstItem="KQT-3u-Pxu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vaG-5M-u3y"/>
                             <constraint firstItem="oSL-zi-zTK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="vvP-c5-IR0"/>
+                            <constraint firstAttribute="trailing" secondItem="fwo-iZ-3tr" secondAttribute="trailing" id="wkL-wk-9dm"/>
+                            <constraint firstItem="mSp-gN-cEb" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="-9" id="z63-fE-rG2"/>
+                            <constraint firstItem="ifG-Qi-DBP" firstAttribute="leading" secondItem="Fmt-x7-5Z5" secondAttribute="trailing" constant="11" id="zU0-Y0-Aaq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -183,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336" y="140"/>
+            <point key="canvasLocation" x="-506" y="78"/>
         </scene>
     </scenes>
     <resources>

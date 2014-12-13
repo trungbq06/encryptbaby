@@ -47,6 +47,23 @@
     _level = 3;
 }
 
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
+    [_txtText resignFirstResponder];
+    
+    return TRUE;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+
 #pragma mark - AdBannerViewDelegate method implementation
 
 -(void)bannerViewWillLoadAd:(ADBannerView *)banner{
@@ -227,6 +244,8 @@
 }
 
 - (IBAction)btnCopyClick:(id)sender {
+    [_txtText resignFirstResponder];
+    
     NSString *copyStringverse = _encodeText.text;
     UIPasteboard *pb = [UIPasteboard generalPasteboard];
     [pb setString:copyStringverse];
@@ -236,12 +255,16 @@
 }
 
 - (IBAction)btnEncodeClick:(id)sender {
+    [_txtText resignFirstResponder];
+    
     NSString *text = _txtText.text;
     
     [self encode:text];
 }
 
 - (IBAction)btnClearClick:(id)sender {
+    [_txtText resignFirstResponder];
+    
     _txtText.text = @"";
     _encodeText.text = @"";
 }

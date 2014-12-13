@@ -12,7 +12,7 @@
 #import <StoreKit/StoreKit.h>
 #import <iAd/iAd.h>
 
-@interface MainViewController : UIViewController <ADBannerViewDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
+@interface MainViewController : UIViewController <ADBannerViewDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, UITextViewDelegate>
 
 @property (nonatomic, retain) ADBannerView          *adView;
 @property (nonatomic, assign) BOOL                  canShowAds;
