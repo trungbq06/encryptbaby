@@ -59,9 +59,18 @@
     if([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
         return NO;
+    } else {
+        NSLog(@"Text %@1", text);
+        NSArray *array = [_txtText.text componentsSeparatedByString:@" "];
+        if ([array count] == 6 && ![text isEqualToString:@""]) {
+            [textView resignFirstResponder];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You can input only 5 words" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+            
+            return NO;
+        } else
+            return TRUE;
     }
-    
-    return YES;
 }
 
 #pragma mark - AdBannerViewDelegate method implementation
