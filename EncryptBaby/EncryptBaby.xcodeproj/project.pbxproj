@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3726AFF01A3C711E002D96CA /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3726AFEE1A3C711E002D96CA /* bg.png */; };
+		3726AFF11A3C711E002D96CA /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3726AFEF1A3C711E002D96CA /* bg@2x.png */; };
 		372BE9E61A38152E00E9B3CC /* yellow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E51A38152E00E9B3CC /* yellow.jpg */; };
 		372BE9E91A381F3300E9B3CC /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E71A381F3300E9B3CC /* button.png */; };
 		372BE9EA1A381F3300E9B3CC /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E81A381F3300E9B3CC /* button@2x.png */; };
@@ -19,7 +21,6 @@
 		3774E29E1A3AC016008CDB0D /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 3774E2941A3AC016008CDB0D /* keyboard.png */; };
 		3774E29F1A3AC016008CDB0D /* DLIDEKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3774E2971A3AC016008CDB0D /* DLIDEKeyboardView.m */; };
 		3774E2A11A3AC3F2008CDB0D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3774E2A01A3AC3F2008CDB0D /* MessageUI.framework */; };
-		37ADBFD11A39C6AA005137F2 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37ADBFD01A39C6AA005137F2 /* bg.jpg */; };
 		37ADBFD31A39C6BF005137F2 /* bg_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37ADBFD21A39C6BF005137F2 /* bg_2.jpg */; };
 		37ADBFD61A39C7F7005137F2 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = 37ADBFD41A39C7F7005137F2 /* box.png */; };
 		37ADBFD71A39C7F7005137F2 /* box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37ADBFD51A39C7F7005137F2 /* box@2x.png */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3726AFEE1A3C711E002D96CA /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		3726AFEF1A3C711E002D96CA /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 		372BE9E51A38152E00E9B3CC /* yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellow.jpg; sourceTree = "<group>"; };
 		372BE9E71A381F3300E9B3CC /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		372BE9E81A381F3300E9B3CC /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
@@ -58,7 +61,6 @@
 		3774E2961A3AC016008CDB0D /* DLIDEKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLIDEKeyboardView.h; sourceTree = "<group>"; };
 		3774E2971A3AC016008CDB0D /* DLIDEKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLIDEKeyboardView.m; sourceTree = "<group>"; };
 		3774E2A01A3AC3F2008CDB0D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		37ADBFD01A39C6AA005137F2 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		37ADBFD21A39C6BF005137F2 /* bg_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_2.jpg; sourceTree = "<group>"; };
 		37ADBFD41A39C7F7005137F2 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
 		37ADBFD51A39C7F7005137F2 /* box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box@2x.png"; sourceTree = "<group>"; };
@@ -178,11 +180,12 @@
 		677835901A37D33B00CA246E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3726AFEE1A3C711E002D96CA /* bg.png */,
+				3726AFEF1A3C711E002D96CA /* bg@2x.png */,
 				37F2DD021A3A86E100797BD6 /* SVProgressHUD */,
 				37ADBFD41A39C7F7005137F2 /* box.png */,
 				37ADBFD51A39C7F7005137F2 /* box@2x.png */,
 				37ADBFD21A39C6BF005137F2 /* bg_2.jpg */,
-				37ADBFD01A39C6AA005137F2 /* bg.jpg */,
 				372BE9E71A381F3300E9B3CC /* button.png */,
 				372BE9E81A381F3300E9B3CC /* button@2x.png */,
 				372BE9E51A38152E00E9B3CC /* yellow.jpg */,
@@ -309,6 +312,7 @@
 			files = (
 				6778359C1A37D33B00CA246E /* Main.storyboard in Resources */,
 				37ADBFD31A39C6BF005137F2 /* bg_2.jpg in Resources */,
+				3726AFF01A3C711E002D96CA /* bg.png in Resources */,
 				3774E29B1A3AC016008CDB0D /* key-pressed@2x.png in Resources */,
 				3774E29C1A3AC016008CDB0D /* key.png in Resources */,
 				372BE9E91A381F3300E9B3CC /* button.png in Resources */,
@@ -317,10 +321,10 @@
 				3774E29D1A3AC016008CDB0D /* key@2x.png in Resources */,
 				3774E29E1A3AC016008CDB0D /* keyboard.png in Resources */,
 				3774E2981A3AC016008CDB0D /* key-blue.png in Resources */,
+				3726AFF11A3C711E002D96CA /* bg@2x.png in Resources */,
 				372BE9E61A38152E00E9B3CC /* yellow.jpg in Resources */,
 				3774E2991A3AC016008CDB0D /* key-blue@2x.png in Resources */,
 				677835A11A37D33B00CA246E /* LaunchScreen.xib in Resources */,
-				37ADBFD11A39C6AA005137F2 /* bg.jpg in Resources */,
 				3774E29A1A3AC016008CDB0D /* key-pressed.png in Resources */,
 				372BE9EA1A381F3300E9B3CC /* button@2x.png in Resources */,
 				6778359E1A37D33B00CA246E /* Images.xcassets in Resources */,
