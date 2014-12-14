@@ -16,6 +16,8 @@
 
 @property (nonatomic, retain) ADBannerView          *adView;
 @property (nonatomic, assign) BOOL                  canShowAds;
+@property (weak, nonatomic) IBOutlet UIButton *btnEasy;
+@property (weak, nonatomic) IBOutlet UIButton *btnHard;
 
 - (IBAction)btnCopyClick:(id)sender;
 - (IBAction)btnEncodeClick:(id)sender;

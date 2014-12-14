@@ -45,6 +45,9 @@
     
     _startC = 1;
     _level = 3;
+    _btnEasy.selected = TRUE;
+    _txtText.text = @"";
+    _encodeText.text = @"";
 }
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView
@@ -64,7 +67,7 @@
         NSArray *array = [_txtText.text componentsSeparatedByString:@" "];
         if ([array count] == 6 && ![text isEqualToString:@""]) {
             [textView resignFirstResponder];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You can input only 5 words" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You can input only 5 words. Please purchase FULL VERSION to remove Ads" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
             
             return NO;
@@ -233,7 +236,7 @@
     MFMailComposeViewController *mViewController = [[MFMailComposeViewController alloc] init];
     mViewController.mailComposeDelegate = self;
     [mViewController setSubject:@"Encrypt Mesage"];
-    [mViewController setMessageBody:@"Where you can encrypt and share your message" isHTML:NO];
+    [mViewController setMessageBody:_encodeText.text isHTML:NO];
     
     [self presentViewController:mViewController animated:TRUE completion:nil];
 }
@@ -247,7 +250,7 @@
     
     MFMessageComposeViewController *mViewController = [[MFMessageComposeViewController alloc] init];
     mViewController.messageComposeDelegate = self;
-    [mViewController setBody:@"Download Encrypt today"];
+    [mViewController setBody:_encodeText.text];
     
     [self presentViewController:mViewController animated:TRUE completion:nil];
 }
@@ -267,6 +270,12 @@
     [_txtText resignFirstResponder];
     
     NSString *text = _txtText.text;
+    if ([text isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Please enter message to be encoded" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        
+        return;
+    }
     
     [self encode:text];
 }
@@ -280,6 +289,9 @@
 
 - (IBAction)easyClick:(id)sender {
     _level = 3;
+    
+    _btnEasy.selected = TRUE;
+    _btnHard.selected = NO;
 }
 
 - (IBAction)mediumClick:(id)sender {
@@ -288,6 +300,9 @@
 
 - (IBAction)hardClick:(id)sender {
     _level = 1;
+    
+    _btnEasy.selected = NO;
+    _btnHard.selected = TRUE;
 }
 
 - (IBAction)buyClick:(id)sender {

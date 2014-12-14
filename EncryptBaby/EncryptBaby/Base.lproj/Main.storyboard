@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -29,7 +29,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="584" height="190"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="No2-RJ-ebb">
-                                        <rect key="frame" x="20" y="8" width="546" height="185"/>
+                                        <rect key="frame" x="20" y="8" width="546" height="170"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.79607843140000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -45,7 +46,7 @@
                                     <constraint firstAttribute="trailing" secondItem="No2-RJ-ebb" secondAttribute="trailing" constant="18" id="HNl-fp-GQt"/>
                                     <constraint firstItem="GvP-Va-VSO" firstAttribute="leading" secondItem="GF4-tu-uka" secondAttribute="leading" id="Hqg-NS-51z"/>
                                     <constraint firstAttribute="trailing" secondItem="GvP-Va-VSO" secondAttribute="trailing" id="OjP-dn-0B0"/>
-                                    <constraint firstAttribute="bottom" secondItem="No2-RJ-ebb" secondAttribute="bottom" constant="7" id="URe-vu-nL6"/>
+                                    <constraint firstAttribute="bottom" secondItem="No2-RJ-ebb" secondAttribute="bottom" constant="22" id="URe-vu-nL6"/>
                                     <constraint firstItem="No2-RJ-ebb" firstAttribute="leading" secondItem="GF4-tu-uka" secondAttribute="leading" constant="20" id="Y0V-10-f7T"/>
                                     <constraint firstItem="No2-RJ-ebb" firstAttribute="top" secondItem="GF4-tu-uka" secondAttribute="top" constant="8" id="cuE-58-c1M"/>
                                 </constraints>
@@ -56,8 +57,8 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTb-wY-5Ap">
                                         <rect key="frame" x="0.0" y="0.0" width="584" height="190"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="I need you encode me" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-Eg-fHI">
-                                        <rect key="frame" x="20" y="8" width="546" height="180"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="I need you encode me" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-Eg-fHI">
+                                        <rect key="frame" x="20" y="8" width="546" height="170"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.79607843140000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,7 +71,7 @@
                                     <constraint firstAttribute="trailing" secondItem="qCR-Eg-fHI" secondAttribute="trailing" constant="18" id="Gjl-mF-PmH"/>
                                     <constraint firstItem="qCR-Eg-fHI" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="top" constant="8" id="IeC-dM-CM5"/>
                                     <constraint firstItem="QTb-wY-5Ap" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="top" id="abK-5Y-6Yo"/>
-                                    <constraint firstAttribute="bottom" secondItem="qCR-Eg-fHI" secondAttribute="bottom" constant="2" id="eaE-nE-WZl"/>
+                                    <constraint firstAttribute="bottom" secondItem="qCR-Eg-fHI" secondAttribute="bottom" constant="12" id="eaE-nE-WZl"/>
                                     <constraint firstAttribute="trailing" secondItem="QTb-wY-5Ap" secondAttribute="trailing" id="ic6-4s-BXB"/>
                                     <constraint firstItem="qCR-Eg-fHI" firstAttribute="leading" secondItem="R2x-b0-PCB" secondAttribute="leading" constant="20" id="ltg-qW-l4m"/>
                                     <constraint firstItem="QTb-wY-5Ap" firstAttribute="leading" secondItem="R2x-b0-PCB" secondAttribute="leading" id="nZO-cJ-1iN"/>
@@ -122,42 +123,12 @@
                                     <action selector="btnClearClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nSE-Fg-bhV"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQT-3u-Pxu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQT-3u-Pxu">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="ozo-go-mBn"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYb-Ud-fs4">
-                                <rect key="frame" x="445" y="25" width="68" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="WgD-rI-SV9"/>
-                                    <constraint firstAttribute="width" constant="68" id="XAk-Kb-yzc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="15"/>
-                                <state key="normal" title="Medium" backgroundImage="button.png">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="mediumClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tb5-eb-087"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSL-zi-zTK">
-                                <rect key="frame" x="372" y="25" width="68" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="ZUL-d1-eEN"/>
-                                    <constraint firstAttribute="width" constant="68" id="ZXp-bZ-vFl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="15"/>
-                                <state key="normal" title="Easy" backgroundImage="button.png">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="easyClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zt1-LF-8gy"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-Ik-VFL">
                                 <rect key="frame" x="516" y="25" width="68" height="29"/>
                                 <constraints>
@@ -169,6 +140,15 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.19607844948768616" green="0.57254904508590698" blue="0.7450980544090271" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.1960784495" green="0.57254904510000004" blue="0.74509805439999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hardClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSA-dc-Sd7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9T-ir-Cpv">
                                 <rect key="frame" x="351" y="502" width="80" height="35"/>
@@ -215,32 +195,63 @@
                                     <action selector="btnEmailClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BqI-Yl-5za"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Scrambler" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ7-6n-jhX">
+                                <rect key="frame" x="16" y="29" width="174" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="0xk-Ye-uv0"/>
+                                    <constraint firstAttribute="width" constant="174" id="2UN-V1-aZP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSL-zi-zTK">
+                                <rect key="frame" x="442" y="25" width="68" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="ZUL-d1-eEN"/>
+                                    <constraint firstAttribute="width" constant="68" id="ZXp-bZ-vFl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="15"/>
+                                <state key="normal" title="Easy" backgroundImage="button.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.1960784495" green="0.57254904510000004" blue="0.74509805439999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.1960784495" green="0.57254904510000004" blue="0.74509805439999999" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="easyClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zt1-LF-8gy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a9T-ir-Cpv" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="bottom" constant="13" id="2Ky-aU-rHE"/>
+                            <constraint firstItem="AQ7-6n-jhX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="9" id="2rn-KB-yXm"/>
                             <constraint firstItem="mSp-gN-cEb" firstAttribute="leading" secondItem="YsO-XS-Cc6" secondAttribute="trailing" constant="8" id="6zw-KT-gAs"/>
                             <constraint firstAttribute="bottom" secondItem="R2x-b0-PCB" secondAttribute="bottom" constant="111" id="7dT-pJ-Ov2"/>
-                            <constraint firstAttribute="trailing" secondItem="KQT-3u-Pxu" secondAttribute="trailing" id="9zP-gW-rBv"/>
+                            <constraint firstAttribute="trailing" secondItem="KQT-3u-Pxu" secondAttribute="trailing" constant="600" id="9zP-gW-rBv"/>
                             <constraint firstAttribute="bottom" secondItem="fwo-iZ-3tr" secondAttribute="bottom" id="ChY-0b-zwg"/>
                             <constraint firstItem="fwo-iZ-3tr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GQ0-MY-WeL"/>
-                            <constraint firstItem="KQT-3u-Pxu" firstAttribute="bottom" secondItem="bEv-8a-XhU" secondAttribute="bottom" constant="9" id="JPH-es-Qoa"/>
-                            <constraint firstAttribute="centerY" secondItem="KQT-3u-Pxu" secondAttribute="centerY" id="Kyt-Es-KOd"/>
+                            <constraint firstItem="KQT-3u-Pxu" firstAttribute="bottom" secondItem="bEv-8a-XhU" secondAttribute="bottom" constant="-291" id="JPH-es-Qoa"/>
+                            <constraint firstItem="AQ7-6n-jhX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KZf-Id-gQ6"/>
+                            <constraint firstAttribute="centerY" secondItem="KQT-3u-Pxu" secondAttribute="centerY" constant="300" id="Kyt-Es-KOd"/>
+                            <constraint firstItem="tvH-Ik-VFL" firstAttribute="leading" secondItem="oSL-zi-zTK" secondAttribute="trailing" constant="6" id="Mg9-YE-jKW"/>
                             <constraint firstAttribute="trailing" secondItem="GF4-tu-uka" secondAttribute="trailing" constant="8" id="Oin-na-fXt"/>
                             <constraint firstAttribute="trailing" secondItem="R2x-b0-PCB" secondAttribute="trailing" constant="8" id="PrE-9B-ale"/>
                             <constraint firstItem="fwo-iZ-3tr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Sjp-mQ-EYO"/>
                             <constraint firstAttribute="centerX" secondItem="mSp-gN-cEb" secondAttribute="centerX" id="TLX-gc-sUN"/>
-                            <constraint firstItem="YsO-XS-Cc6" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="-9" id="UMy-C5-MWs"/>
+                            <constraint firstItem="YsO-XS-Cc6" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="291" id="UMy-C5-MWs"/>
                             <constraint firstAttribute="centerX" secondItem="ifG-Qi-DBP" secondAttribute="centerX" id="UWZ-DS-FVm"/>
                             <constraint firstItem="ifG-Qi-DBP" firstAttribute="top" secondItem="R2x-b0-PCB" secondAttribute="bottom" constant="13" id="Xrk-48-7cv"/>
-                            <constraint firstItem="tvH-Ik-VFL" firstAttribute="leading" secondItem="xYb-Ud-fs4" secondAttribute="trailing" constant="3" id="Xx5-AD-MAC"/>
                             <constraint firstItem="bEv-8a-XhU" firstAttribute="leading" secondItem="mSp-gN-cEb" secondAttribute="trailing" constant="8" id="Ya2-Mu-0US"/>
                             <constraint firstItem="R2x-b0-PCB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="clH-zh-IzO"/>
-                            <constraint firstItem="GF4-tu-uka" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="-43" id="ibp-XR-UEx"/>
-                            <constraint firstItem="R2x-b0-PCB" firstAttribute="top" secondItem="KQT-3u-Pxu" secondAttribute="top" constant="-1" id="kMj-6L-83J"/>
+                            <constraint firstItem="GF4-tu-uka" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="257" id="ibp-XR-UEx"/>
+                            <constraint firstItem="R2x-b0-PCB" firstAttribute="top" secondItem="KQT-3u-Pxu" secondAttribute="top" constant="299" id="kMj-6L-83J"/>
                             <constraint firstItem="a9T-ir-Cpv" firstAttribute="leading" secondItem="ifG-Qi-DBP" secondAttribute="trailing" constant="11" id="kf3-rY-X23"/>
-                            <constraint firstItem="xYb-Ud-fs4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="kqN-tH-FBg"/>
-                            <constraint firstItem="xYb-Ud-fs4" firstAttribute="leading" secondItem="oSL-zi-zTK" secondAttribute="trailing" constant="5" id="l3g-AB-FRM"/>
                             <constraint firstItem="GF4-tu-uka" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="ldN-P8-8pN"/>
                             <constraint firstItem="GF4-tu-uka" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="57" id="nUk-WO-tZw"/>
                             <constraint firstItem="tvH-Ik-VFL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pC3-Cn-4ay"/>
@@ -249,11 +260,13 @@
                             <constraint firstItem="KQT-3u-Pxu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vaG-5M-u3y"/>
                             <constraint firstItem="oSL-zi-zTK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="vvP-c5-IR0"/>
                             <constraint firstAttribute="trailing" secondItem="fwo-iZ-3tr" secondAttribute="trailing" id="wkL-wk-9dm"/>
-                            <constraint firstItem="mSp-gN-cEb" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="-9" id="z63-fE-rG2"/>
+                            <constraint firstItem="mSp-gN-cEb" firstAttribute="bottom" secondItem="KQT-3u-Pxu" secondAttribute="bottom" constant="291" id="z63-fE-rG2"/>
                             <constraint firstItem="ifG-Qi-DBP" firstAttribute="leading" secondItem="Fmt-x7-5Z5" secondAttribute="trailing" constant="11" id="zU0-Y0-Aaq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnEasy" destination="oSL-zi-zTK" id="g0y-Dg-6aZ"/>
+                        <outlet property="btnHard" destination="tvH-Ik-VFL" id="YQ7-7k-XDX"/>
                         <outlet property="encodeText" destination="qCR-Eg-fHI" id="f6z-S8-eiy"/>
                         <outlet property="txtText" destination="No2-RJ-ebb" id="EGC-Rj-A6K"/>
                     </connections>
