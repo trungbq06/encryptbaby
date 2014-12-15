@@ -12,6 +12,7 @@
 		372BE9E61A38152E00E9B3CC /* yellow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E51A38152E00E9B3CC /* yellow.jpg */; };
 		372BE9E91A381F3300E9B3CC /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E71A381F3300E9B3CC /* button.png */; };
 		372BE9EA1A381F3300E9B3CC /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 372BE9E81A381F3300E9B3CC /* button@2x.png */; };
+		3764899E1A3E803C0061794F /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3764899D1A3E803C0061794F /* splash.png */; };
 		3774E2981A3AC016008CDB0D /* key-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 3774E28E1A3AC016008CDB0D /* key-blue.png */; };
 		3774E2991A3AC016008CDB0D /* key-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3774E28F1A3AC016008CDB0D /* key-blue@2x.png */; };
 		3774E29A1A3AC016008CDB0D /* key-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 3774E2901A3AC016008CDB0D /* key-pressed.png */; };
@@ -51,6 +52,7 @@
 		372BE9E51A38152E00E9B3CC /* yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellow.jpg; sourceTree = "<group>"; };
 		372BE9E71A381F3300E9B3CC /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		372BE9E81A381F3300E9B3CC /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		3764899D1A3E803C0061794F /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		3774E28E1A3AC016008CDB0D /* key-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-blue.png"; sourceTree = "<group>"; };
 		3774E28F1A3AC016008CDB0D /* key-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-blue@2x.png"; sourceTree = "<group>"; };
 		3774E2901A3AC016008CDB0D /* key-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-pressed.png"; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 		37F2DD031A3A86E100797BD6 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		37F2DD041A3A86E100797BD6 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		37F2DD051A3A86E100797BD6 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		6778358D1A37D33B00CA246E /* EncryptBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncryptBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6778358D1A37D33B00CA246E /* Scrambler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrambler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		677835911A37D33B00CA246E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		677835921A37D33B00CA246E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		677835941A37D33B00CA246E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,7 +158,7 @@
 		6778358E1A37D33B00CA246E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6778358D1A37D33B00CA246E /* EncryptBaby.app */,
+				6778358D1A37D33B00CA246E /* Scrambler.app */,
 				677835A61A37D33B00CA246E /* EncryptBabyTests.xctest */,
 			);
 			name = Products;
@@ -180,6 +182,7 @@
 		677835901A37D33B00CA246E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3764899D1A3E803C0061794F /* splash.png */,
 				3726AFEE1A3C711E002D96CA /* bg.png */,
 				3726AFEF1A3C711E002D96CA /* bg@2x.png */,
 				37F2DD021A3A86E100797BD6 /* SVProgressHUD */,
@@ -246,7 +249,7 @@
 			);
 			name = EncryptBaby;
 			productName = EncryptBaby;
-			productReference = 6778358D1A37D33B00CA246E /* EncryptBaby.app */;
+			productReference = 6778358D1A37D33B00CA246E /* Scrambler.app */;
 			productType = "com.apple.product-type.application";
 		};
 		677835A51A37D33B00CA246E /* EncryptBabyTests */ = {
@@ -315,6 +318,7 @@
 				37ADBFD31A39C6BF005137F2 /* bg_2.jpg in Resources */,
 				3726AFF01A3C711E002D96CA /* bg.png in Resources */,
 				3774E29B1A3AC016008CDB0D /* key-pressed@2x.png in Resources */,
+				3764899E1A3E803C0061794F /* splash.png in Resources */,
 				3774E29C1A3AC016008CDB0D /* key.png in Resources */,
 				372BE9E91A381F3300E9B3CC /* button.png in Resources */,
 				37ADBFD61A39C7F7005137F2 /* box.png in Resources */,
@@ -480,7 +484,7 @@
 				INFOPLIST_FILE = EncryptBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Scrambler;
 				PROVISIONING_PROFILE = "6c9c7951-50a3-43b4-957b-00a2b904527d";
 			};
 			name = Debug;
@@ -494,7 +498,7 @@
 				INFOPLIST_FILE = EncryptBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Scrambler;
 				PROVISIONING_PROFILE = "6c9c7951-50a3-43b4-957b-00a2b904527d";
 			};
 			name = Release;

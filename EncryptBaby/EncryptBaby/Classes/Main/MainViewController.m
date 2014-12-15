@@ -44,7 +44,7 @@
     [self.view addSubview:_adView];
     
     _startC = 1;
-    _level = 3;
+    _level = 4;
     _btnEasy.selected = TRUE;
     _txtText.text = @"";
     _encodeText.text = @"";
@@ -63,11 +63,10 @@
         [textView resignFirstResponder];
         return NO;
     } else {
-        NSLog(@"Text %@1", text);
         NSArray *array = [_txtText.text componentsSeparatedByString:@" "];
         if ([array count] == 6 && ![text isEqualToString:@""]) {
             [textView resignFirstResponder];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You can input only 5 words. Please purchase FULL VERSION to remove Ads" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You can input only 5 words. Please purchase FULL VERSION to unlimited words" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
             
             return NO;
@@ -149,39 +148,77 @@
         _startC = ranS;
         if (_level == 1) {
             _startC = 1;
-        }
-        NSLog(@"==== Start: %d", _startC);
-        if (_startC < length - 2) {
-            newWord = [NSString stringWithFormat:@"%@", [word substringToIndex:_startC]];
-            
-            NSString *needSwap = [word substringWithRange:NSMakeRange(_startC, length - 1 - _startC)];
-            NSLog(@"Need: %@", needSwap);
-            NSMutableArray *swap = [[NSMutableArray alloc] initWithCapacity:0];
-            NSMutableArray *swapId = [[NSMutableArray alloc] initWithCapacity:0];
-            
-            for (int i = _startC; i < length - 1;i++) {
-                [swapId addObject:[NSNumber numberWithInt:i]];
-            }
-            
-            while ([swapId count] > 0) {
-                int random = arc4random() % [swapId count];
+            NSLog(@"==== Start: %d", _startC);
+            if (_startC < length - 2) {
+                newWord = [NSString stringWithFormat:@"%@", [word substringToIndex:_startC]];
                 
-                NSLog(@"Random: %d", random);
-                [swap addObject:[NSString stringWithFormat:@"%c", [word characterAtIndex: [[swapId objectAtIndex:random] intValue]]]];
-                 
-                [swapId removeObjectAtIndex:random];
+                NSString *needSwap = [word substringWithRange:NSMakeRange(_startC, length - 1 - _startC)];
+                NSLog(@"Need: %@", needSwap);
+                NSMutableArray *swap = [[NSMutableArray alloc] initWithCapacity:0];
+                NSMutableArray *swapId = [[NSMutableArray alloc] initWithCapacity:0];
+                
+                for (int i = _startC; i < length - 1;i++) {
+                    [swapId addObject:[NSNumber numberWithInt:i]];
+                }
+                
+                while ([swapId count] > 0) {
+                    int random = arc4random() % [swapId count];
+                    
+                    NSLog(@"Random: %d", random);
+                    [swap addObject:[NSString stringWithFormat:@"%c", [word characterAtIndex: [[swapId objectAtIndex:random] intValue]]]];
+                     
+                    [swapId removeObjectAtIndex:random];
+                }
+                
+                newWord = [NSString stringWithFormat:@"%@%@%@", newWord, [swap componentsJoinedByString:@""], [word substringFromIndex:[word length] - 1]];
+            } else {
+                newWord = word;
             }
+            NSLog(@"Encode %@", newWord);
             
-            newWord = [NSString stringWithFormat:@"%@%@%@", newWord, [swap componentsJoinedByString:@""], [word substringFromIndex:[word length] - 1]];
+            return newWord;
         } else {
-            newWord = word;
+            // Swap 2 half of string
+            int mid = ceil(length/2);
+            NSString *midFirst = [word substringWithRange:NSMakeRange(1, mid - 1)];
+            NSString *midLast = [word substringWithRange:NSMakeRange(mid, length - mid - 1)];
+            
+            NSLog(@"____First: %@", midFirst);
+            NSLog(@"_____Last: %@", midLast);
+            
+            NSString *swapFirst = [self swapChild:midFirst];
+            NSString *swapLast = [self swapChild:midLast];
+            
+            newWord = [NSString stringWithFormat:@"%@%@%@%@", [word substringToIndex:1], swapFirst, swapLast, [word substringWithRange:NSMakeRange(length - 1, 1)]];
+            
+            return newWord;
         }
-        NSLog(@"Encode %@", newWord);
-        
-        return newWord;
     }
     
     return word;
+}
+
+- (NSString*) swapChild:(NSString*) word {
+    int length = (int) [word length];
+    NSMutableArray *swapId = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *swap = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for (int i = 0; i < length;i++) {
+        [swapId addObject:[NSNumber numberWithInt:i]];
+    }
+    
+    while ([swapId count] > 0) {
+        int random = arc4random() % [swapId count];
+        
+        NSLog(@"Random: %d", random);
+        [swap addObject:[NSString stringWithFormat:@"%c", [word characterAtIndex: [[swapId objectAtIndex:random] intValue]]]];
+        
+        [swapId removeObjectAtIndex:random];
+    }
+    
+    NSString *newWord = [swap componentsJoinedByString:@""];
+    
+    return newWord;
 }
 
 #pragma mark - Message Delegate
@@ -288,7 +325,7 @@
 }
 
 - (IBAction)easyClick:(id)sender {
-    _level = 3;
+    _level = 4;
     
     _btnEasy.selected = TRUE;
     _btnHard.selected = NO;
